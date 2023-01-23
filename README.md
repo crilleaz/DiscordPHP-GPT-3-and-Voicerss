@@ -14,3 +14,12 @@ By using https://api.openai.com/v1/engines/text-davinci-003/completions and voic
 * Bot will now start AI generating an answer for your question, then use Voicerss to generate text-to-speech based on AI's answer
 * Bot will now join selected voice channel, start talking then leave the voice channel
 * Bot will remove the generated .mp3-file from the system
+
+# Discord
+* Crille#6623
+
+
+# Credits
+* DiscordPHP
+* OpenAI GPT-3
+* Voicerss
