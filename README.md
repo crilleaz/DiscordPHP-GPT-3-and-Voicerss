@@ -8,9 +8,11 @@ By using https://api.openai.com/v1/engines/text-davinci-003/completions and voic
 *  Edit run.php and functions.php, add your tokens
 *  Install FFMPEG locally
 *  Invite your discordbot your server
+*  Have atleast php8.0 installed
 
 
 # Usage
+* Start: sudo php run.php
 * type .ai what does color red taste like?
 * Bot will now start AI generating an answer for your question, then use Voicerss to generate text-to-speech based on AI's answer
 * Bot will now join selected voice channel, start talking then leave the voice channel
