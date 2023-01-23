@@ -1,0 +1,7 @@
+{
+    "require": {
+        "team-reflex/discord-php": "dev-master",
+        "illuminate/support": "^9.46",
+        "php-ffmpeg/php-ffmpeg": "^1.1"
+    }
+}
