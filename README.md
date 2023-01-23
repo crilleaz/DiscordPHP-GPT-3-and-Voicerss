@@ -6,8 +6,9 @@ By using https://api.openai.com/v1/engines/text-davinci-003/completions and voic
 # Installation
 *  Clone repo to wherever or download directly
 *  Edit run.php and functions.php, add your tokens
-*  Invite your discordbot your server
 *  Install FFMPEG locally
+*  Invite your discordbot your server
+
 
 # Usage
 * type .ai what does color red taste like?
