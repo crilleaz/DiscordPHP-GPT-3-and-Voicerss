@@ -3,6 +3,9 @@ A DiscordPHP bot with GPT-3 AI and Voicerss implementation
 
 By using https://api.openai.com/v1/engines/text-davinci-003/completions and voicerss-text-to-speech, we get a funny take on AI, having the AI talk back to you with the generated text.
 
+# Test it live
+https://discord.gg/M8ufRPa8q6
+
 # Installation
 *  Clone repo to wherever or download directly
 *  Edit run.php and functions.php, add your tokens
