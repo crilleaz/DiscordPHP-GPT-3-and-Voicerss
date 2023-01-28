@@ -39,12 +39,15 @@ function terminator($q){
     $response1 = json_decode($response1, true);
     
     // Check if the "choices" key exists in the array
-    if(array_key_exists("choices", $response1) && !empty($response1["choices"]) && !empty($response1["choices"][0]) && !empty($response1["choices"][0]["text"])) {
-        $ai_response = $response1["choices"][0]["text"];
-    }else{
-        // set a default value if the key does not exist
-        $ai_response = "";
-    }
+	if(isset($response1) && is_array($response1) && array_key_exists("choices", $response1) && !empty($response1["choices"]) && !empty($response1["choices"][0]) && !empty($response1["choices"][0]["text"])) {
+		$ai_response = $response1["choices"][0]["text"];
+	}else{
+		// set a default value if the key does not exist or $response1 is not set
+		$ai_response = "";
+		unlink_mp3();
+		echo "Error: response1 is not set properly or not an array.";
+	}
+
     
     // URL encode the AI response
     $ai_response = urlencode($ai_response);
@@ -59,7 +62,7 @@ function terminator($q){
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "src=". $ai_response ."&hl=en-us&v=Linda&r=0&c=mp3&f=32khz_16bit_stereo", // see voicerss.org/api/ for voices and settings
+        CURLOPT_POSTFIELDS => "src=". $ai_response ."&hl=en-us&v=Linda&r=0&c=mp3&f=ulaw_44khz_stereo", // see voicerss.org/api/ for voices and settings
         CURLOPT_HTTPHEADER => [
             "X-RapidAPI-Host: voicerss-text-to-speech.p.rapidapi.com",
             "X-RapidAPI-Key: $rapid_key",
@@ -74,6 +77,16 @@ function terminator($q){
     fwrite($mp3file, $response);
     fclose($mp3file);
     curl_close($curl);
+	
+	    $filesize = filesize($path_to_tts . $random_string . ".mp3");
+		if (file_exists($path_to_tts . $random_string . ".mp3") && $filesize > 0) {
+			if ($filesize <= 1024) {
+				unlink_mp3();
+				echo "Error: Generated MP3 file is too small. filesize: " . $filesize . " bytes.";
+			}
+		} else {
+			echo "Error: Generated MP3 file is not created or is of 0 bytes.";
+		}
 }
 
 function unlink_mp3(){
