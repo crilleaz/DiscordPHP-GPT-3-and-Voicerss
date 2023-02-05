@@ -5,6 +5,7 @@ By using https://api.openai.com/v1/engines/text-davinci-003/completions and voic
 
 # Test it live
 https://discord.gg/M8ufRPa8q6
+(due to limited hosting capabilities, bot might be offline)
 
 # Installation
 *  Clone repo to wherever or download directly
