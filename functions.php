@@ -10,6 +10,7 @@ function terminator($q){
     $q = str_replace('"', '', $q);
     $prompt = '{
         "prompt": "'.$q.'",
+	"temperature": 0.99,
         "max_tokens":4000
     }';
 
