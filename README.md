@@ -10,7 +10,7 @@ https://discord.gg/M8ufRPa8q6
 # Installation
 *  Clone repo to wherever or download directly
 *  Edit run.php and functions.php, add your tokens
-*  Install FFMPEG locally
+*  Install FFMPEG locally (linux: sudo apt install ffmpeg)
 *  Invite your discordbot your server
 *  Have atleast php8.0 installed
 
