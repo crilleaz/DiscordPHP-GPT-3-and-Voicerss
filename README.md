@@ -24,7 +24,7 @@ Join the voice-channel and type any question: .ai what does color red taste like
 * Bot will remove the generated .mp3-file from the system
 
 # Discord
-* Crille#6623
+* Crilleaz
 
 
 # Credits
